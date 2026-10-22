@@ -5,7 +5,7 @@ Ao provisionar qualquer nova infraestrutura usando Terraform (ou Tofu), estabele
 Nesta configuração, definimos um bucket Amazon S3 para hospedar os arquivos de estado remotos e utilizamos o DynamoDB para garantir a consistência de bloqueio atômico em implantações concorrentes.
 
 **Aviso de Melhor Prática:**
-Armazenar o estado remoto em serviços como S3 é altamente recomendado. Commitar localmente arquivos `terraform.state` diretamente em um repositório Git deve ser feito apenas em ambientes de teste temporários e sob controle rigoroso.
+Armazenar o estado remoto em serviços como S3 é altamente recomendado. Commitar localmente arquivos `terraform.state` diretamente em um repositório Git não deve ser feito de forma alguma.
 
 ## Estrutura de Diretórios (`terraform/setup`)
 **Aviso de Alias:** Para simplificar ao longo deste guia, usaremos a abreviação `tf` para nos referirmos genericamente tanto ao Terraform quanto ao Tofu. O fluxo de trabalho operacional permanece idêntico, independentemente da ferramenta que você está utilizando. Recomendamos configurar um alias para `tf` apontando para sua utilidade instalada preferida.

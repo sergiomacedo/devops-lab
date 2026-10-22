@@ -5,7 +5,7 @@ When provisioning any new infrastructure using Terraform (or Tofu), establishing
 In this setup, we define an Amazon S3 bucket to host the remote state files and utilize DynamoDB to ensure atomic locking consistency across concurrent deployments.
 
 **Best Practice Notice:**
-Storing remote state in services like S3 is strongly recommended. Committing local `terraform.state` files directly to a Git repository should only be done in highly controlled, temporary testing environments.
+Storing remote state in services like S3 is strongly recommended. Committing local `terraform.state` files directly to a Git repository should not be done at all.
 
 ## Directory Structure (`terraform/setup`)
 **Tool Alias Note:** For simplicity throughout this guide, we will use the abbreviation `tf` to refer generically to both Terraform and Tofu. The operational workflow remains identical regardless of which tool you are using. We recommend setting up an alias for `tf` pointing to your preferred installed utility.
