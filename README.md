@@ -8,4 +8,5 @@ This repository is designed to allow you to set up an environment for comprehens
 The following files contain setup guides:
 
 *   Floci Setup [(en)](./floci-setup.md) [(pt-br)](./floci-setup-pt-br.md)
+*   Terraform/Tofu Installation [(en)](./terraform/terraform-tofu-setup.md)[(pt-br)](./terraform/terraform-tofu-setup-pt-br.md)
 *   Terraform/Tofu State Bucket Setup [(en)](./terraform/state-bucket-setup.md)[(pt-br)](./terraform/state-bucket-setup-pt-br.md)
