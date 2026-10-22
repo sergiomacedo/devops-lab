@@ -6,9 +6,11 @@ services:
     ports:
       - "4566:4566" # Floci's main API endpoint
     volumes:
-      - floci-data:/var/lib/floci
+      - floci-data:/app/data
       # This volume mount is required for Floci to control other Docker services (like k3s)
       - /var/run/docker.sock:/var/run/docker.sock
-
+    environment:
+      FLOCI_STORAGE_MODE: persistent
+      FLOCI_STORAGE_PERSISTENT_PATH: /app/data
 volumes:
   floci-data:
