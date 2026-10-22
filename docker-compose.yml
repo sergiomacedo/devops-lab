@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  floci:
+    image: floci/floci:latest
+    container_name: floci
+    ports:
+      - "4566:4566" # Floci's main API endpoint
+    volumes:
+      - floci-data:/var/lib/floci
+      # This volume mount is required for Floci to control other Docker services (like k3s)
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  floci-data:
