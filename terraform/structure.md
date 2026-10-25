@@ -4,7 +4,7 @@
 
 There are many possibilities on how to distribute your code on the repository, like using workspaces in a single directory, separating directorys per functionality (network, eks, rds etc).
 
-We'll be using the <cloud>/<region>/<environment>/ approach, with all files in a single directory. As we're working only with a simulated AWS environment, we're not adding the <cloud> directory, starting the tree directly with <region>. 
+We'll be using the `<cloud>/<region>/<environment>/` approach, with all files in a single directory. As we're working only with a simulated AWS environment, we're not adding the `<cloud>` directory, starting the tree directly with `<region>`. 
 
 This structure allows things like multi-region, replicated environments:
 
