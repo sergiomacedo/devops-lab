@@ -10,3 +10,4 @@ The following files contain setup guides:
 *   Floci Setup [(en)](./floci-setup.md) [(pt-br)](./floci-setup-pt-br.md)
 *   Terraform/Tofu Installation [(en)](./terraform/terraform-tofu-setup.md)[(pt-br)](./terraform/terraform-tofu-setup-pt-br.md)
 *   Terraform/Tofu Initial Setup [(en)](./terraform/initial-setup.md)[(pt-br)](./terraform/initial-setup-pt-br.md)
+*   Directory Structure and first resources creation [(en)](./terraform/structure.md)[(pt-br)](./terraform/structure-pt-br.md)
