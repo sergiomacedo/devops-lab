@@ -20,7 +20,7 @@ This structure allows things like multi-region, replicated environments:
         └── <terraform files>
 ```
 
-As the number of resources in a single directory grows, the time for an `tf plan` may get excessively long. So it may be necessary to change the directory structure to <region>/<environment>/<function>, which will require the use of `terraform_remote_state` resources or tools like `terragrunt`, but this won't be covered here.
+As the number of resources in a single directory grows, the time for an `tf plan` may get excessively long. So it may be necessary to change the directory structure to `<region>/<environment>/<function>`, which will require the use of `terraform_remote_state` resources or tools like `terragrunt`, but this won't be covered here.
 
 ## Environment
 
