@@ -49,3 +49,42 @@ Esta configuração especial cria um novo provedor AWS que será referenciado co
 Considerando que o `floci` está ativo e a configuração inicial foi concluída, você deve ser capaz de executar `tf plan` para verificar quais recursos serão criados e `tf apply` para criá-los.
 
 * **Nota:** Você pode acessar o painel do `floci` e ver efetivamente os recursos criados lá, como se fosse o console da AWS. Acesse `http://localhost:4566/` no seu navegador e clique em `Open Floci UI` (Abrir UI Floci).
+
+
+# Conectando ao Cluster Kubernetes
+
+**Pré-requisitos:**
+Antes de prosseguir, certifique-se de que o AWS CLI (`aws cli`) e o `kubectl` estejam instalados e configurados em seu sistema.
+
+**1. Atualizar Contexto kubeconfig:**
+Para conectar sua máquina local com segurança ao cluster provisionado, execute o seguinte comando. Isso atualiza o arquivo `.kube/config` local com as credenciais de contexto necessárias:
+
+```bash
+aws eks update-kubeconfig \
+  --name devops-lab \
+  --region us-east-1 \
+  --role-arn arn:aws:iam::111111111111:role/EKSClusterAdmin
+```
+
+**2. Verificação:**
+Após executar o comando acima com sucesso, você pode verificar a conectividade e o status do cluster executando comandos padrão `kubectl`. Os nomes específicos dos pods e os *timestamps* de `AGE` variarão dependendo do momento da execução.
+
+**Verificar Namespaces:**
+```bash
+$ kubectl get namespaces
+NAME              STATUS   AGE
+default           Active   21h
+kube-node-lease   Active   21h
+kube-public       Active   21h
+kube-system       Active   21h
+```
+
+**Listar Pods em Todos os Namespaces:**
+```bash
+$ kubectl get pods -A -o wide
+NAMESPACE     NAME                              READY   STATUS    RESTARTS   AGE   IP          NODE                               NOMINATED NODE   READINESS GATES
+kube-system   coredns-57c85bc755-cjxzd          1/1     Running   0          21h   10.42.0.5   i-dcb87a4f17413e3bb.ec2.internal   <none>           <none>
+kube-system   metrics-server-5b8c959fb5-8njk8   1/1     Running   0          21h   10.42.0.4   i-dcb87a4f17413e3bb.ec2.internal   <none>           <none>
+```
+
+***Nota:*** *Os nomes de host observados na coluna `NODE` seguirão o padrão de nome de host da AWS em `us-east-1`.*
