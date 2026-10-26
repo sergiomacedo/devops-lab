@@ -1,6 +1,6 @@
 # Devops Lab
 
-This repository is designed to allow you to set up an environment for comprehensive testing with tools like Terraform, Kubernetes, and various other DevOps utilities. It serves as a central hub for all development environments related to the floci platform.
+This repository is designed to allow you to set up an environment for comprehensive testing with tools like Terraform, Kubernetes, and various other DevOps utilities.
 
 **Disclaimer:** Part of the documentation was written using AI (lmstudios bionic agent, with Genma 4 E4B model). 
 
