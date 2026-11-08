@@ -3,9 +3,28 @@ output "available_azs" {
   value       = data.aws_availability_zones.aws_azs.names
 }
 
-output "vpc" {
-  description = "List of available azs"
+output "vpc_id" {
   value       = module.vpc.vpc_id
+}
+
+output "eks_cluster_endpoint" {
+  description = "EKS endpoint"
+  value       = module.eks.cluster_endpoint
+}
+
+output "eks_ca_data" {
+  description = "EKS CA data"
+  value       = module.eks.cluster_certificate_authority_data
+}
+
+output "eks_cluster_name" {
+  description = "EKS endpoint"
+  value       = module.eks.cluster_name
+}
+
+output "eks_cluster_oidc_issuer" {
+  description = "EKS endpoint"
+  value       = module.eks.cluster_oidc_issuer_url
 }
 
 /*
