@@ -22,6 +22,8 @@ O ArgoCD é implantado via `helm` usando o recurso `helm_release` e exposto por 
 
 **Nota:** Como estamos utilizando uma simulação de `EKS` via `k3s`, não utilizamos o AWS Load Balancer Controller. Em vez disso, dependemos da implementação padrão de LoadBalancer fornecida pelo motor do cluster subjacente.
 
+**Aviso:** Nenhuma customização foi feita na configuração do ArgoCD. Esta configuração é apenas para fins de demonstração/laboratório e não deve ser usada em um ambiente de produção da forma como está neste exemplo.
+
 ### Recuperando Credenciais e Informações de Acesso
 
 Siga estas etapas para recuperar a senha de instalação padrão e o endereço IP do LoadBalancer.
