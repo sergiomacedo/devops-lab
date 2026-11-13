@@ -2,7 +2,7 @@
 
 Este repositório foi criado para permitir a configuração de um ambiente para testes abrangentes com ferramentas como Terraform, Kubernetes e várias outras utilidades DevOps. Ele serve como um centro de desenvolvimento para todos os ambientes relacionados à plataforma floci.
 
-**Aviso:** Parte da documentação foi escrita usando IA (agente bionic lmstudios, com modelo Genma 4 E4B). 
+**Aviso:** Parte da documentação foi escrita usando IA (agente bionic lmstudios, com os modelos Gemma 4 E4B e Gemma 4 12B QAT).
 
 ## 📚 Índice
 Os seguintes arquivos contêm guias de configuração:
