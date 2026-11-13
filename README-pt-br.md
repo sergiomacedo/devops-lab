@@ -11,3 +11,4 @@ Os seguintes arquivos contêm guias de configuração:
 *   Instalação Terraform/Tofu [(en)](./terraform/terraform-tofu-setup.md)[(pt-br)](./terraform/terraform-tofu-setup-pt-br.md)
 *   Configuração Inicial do Terraform/Tofu [(en)](./terraform/initial-setup.md)[(pt-br)](./terraform/initial-setup-pt-br.md)
 *   Estrutura de diretórios e criação dos primeiros recursos [(en)](./terraform/structure.md)[(pt-br)](./terraform/structure-pt-br.md)
+*   Configuração de Kubernetes [(en)](./terraform/us-east-1/dev/k8s-platform/kubernetes-config.md)[(pt-br)](./terraform/us-east-1/dev/k8s-platform/kubernetes-config-pt-br.md)
