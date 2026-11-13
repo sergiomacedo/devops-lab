@@ -26,13 +26,12 @@ output "eks_cluster_oidc_issuer" {
   description = "EKS endpoint"
   value       = module.eks.cluster_oidc_issuer_url
 }
-
 /*
-output "controller_role_arn" {
-  value = aws_iam_role.load_balancer_controller.arn
+output "aws_lbc_role_arn" {
+  value = aws_iam_role.aws_load_balancer_controller.arn
 }
 
-output "controller_policy_arn" {
-  value = aws_iam_policy.load_balancer_controller.arn
+output "aws_lbc_policy_arn" {
+  value = aws_iam_policy.aws_load_balancer_controller.arn
 }
 */
