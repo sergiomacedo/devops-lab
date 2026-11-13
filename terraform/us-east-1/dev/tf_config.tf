@@ -20,9 +20,9 @@ provider "aws" {
 
 provider "aws" {
   alias  = "eks-manager"
-  region = "us-east-1"
+  region = data.aws_region.current.region
   assume_role {
-    role_arn     = "arn:aws:iam::111111111111:role/EKSClusterAdmin"
+    role_arn     = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/EKSClusterAdmin"
     session_name = "terraform-eks"
   }
 }
