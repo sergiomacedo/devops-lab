@@ -28,15 +28,7 @@ ArgoCD is deployed via `helm` using the `helm_release` resource and exposed via 
 
 Follow these steps to retrieve the default installation password and the LoadBalancer IP address.
 
-#### 1. Retrieve Default Admin Password
-Execute the following command to retrieve the initial admin password. If the command does not return a value immediately, wait a few seconds and repeat it until the password is displayed:
-
-```bash
-kubectl -n argocd get secret argocd-initial-admin-secret \
-  -o jsonpath="{.data.password}" | base64 -d; echo
-```
-
-#### 2. Retrieve LoadBalancer IP
+#### 1. Retrieve LoadBalancer IP
 Run the following command to obtain the external IP address of the ArgoCD server. If the IP is not yet assigned, wait a few seconds and repeat the command until it appears:
 
 ```bash
@@ -44,10 +36,29 @@ kubectl get svc argocd-server -n argocd \
   -o=jsonpath='{.status.loadBalancer.ingress[0].ip}' ; echo
 ```
 
+#### 2. Retrieve Default Admin Password
+Execute the following command to retrieve the initial admin password. If the command does not return a value immediately, wait a few seconds and repeat it until the password is displayed:
+
+```bash
+kubectl -n argocd get secret argocd-initial-admin-secret \
+  -o jsonpath="{.data.password}" | base64 -d; echo
+```
+
 #### 3. Accessing the Interface
-Access the ArgoCD UI via your web browser using the IP address obtained above. Use the following credentials for the initial login:
+Access the ArgoCD UI via your web browser using the IP address obtained in Step 1. Use the following credentials for the initial login:
 
 *   **Username:** `admin`
-*   **Password:** The password retrieved in Step 1.
+*   **Password:** The password retrieved in Step 2.
 
 > **Important:** For security reasons, you must change the administrator password immediately after your first successful login.
+
+### Managing Applications in ArgoCD
+
+There are two ways to configure application management when going to production:
+
+- Each application in argocd will point to its own repository, fetching ALL its information from there
+
+- All applications *configurations* (values.yaml files when using `helm` charts) live in a single repository
+
+The first configuration is easier to maintain but argocd historically have a scale problem when adding more than 50 applications pointing to different repositories. The second option is more stable for scaling up the number of applications but it's more complex to setup reliably, specially to update the application's image release version.
+
