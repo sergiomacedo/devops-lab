@@ -15,7 +15,7 @@ resource "helm_release" "argocd" {
       name  = "server.service.type"
       value = "LoadBalancer"
     },
-    # add an additional local user with apiKey capabilities.{
+    # add an additional local user with apiKey capabilities.
     # Due to a bug in the helm chart renderization, we'll not use the `login` capability, only the `apiKey`
     #   apiKey - allows generating API keys
     #
