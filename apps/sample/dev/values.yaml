@@ -1,10 +1,11 @@
-tls:
-  enabled: false
-service:
-  type: ClusterIP
-ingress:
-  enabled: true
-  path: /
-  hostname: nginx.local
-  ingressClassName: traefik
-  tls: false
+nginx:
+  tls:
+    enabled: false
+  service:
+    type: ClusterIP
+  ingress:
+    enabled: true
+    path: /
+    hostname: nginx.local
+    ingressClassName: traefik
+    tls: false
