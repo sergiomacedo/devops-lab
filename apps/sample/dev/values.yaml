@@ -1,6 +1,10 @@
 tls:
   enabled: false
 service:
-  ports:
-    http: 8080
-    https: 8443
+  type: ClusterIP
+ingress:
+  enabled: true
+  path: /
+  hostname: nginx.local
+  ingressClassName: traefik
+  tls: false
