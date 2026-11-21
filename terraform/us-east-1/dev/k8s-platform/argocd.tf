@@ -12,11 +12,19 @@ resource "helm_release" "argocd" {
 
   set = [
     {
-      name  = "server.service.type"
-      value = "LoadBalancer"
+      name  = "server.ingress.enabled"
+      value = "true"
+    },
+    {
+      name  = "server.ingress.ingressClassName"
+      value = "traefik"
+    },
+    {
+      name  = "server.ingress.hostname"
+      value = "argocd.local"
     },
     # add an additional local user with apiKey capabilities.
-    # Due to a bug in the helm chart renderization, we'll not use the `login` capability, only the `apiKey`
+    # Due to a bug in the helm chart renderization, we'll not use the `login` capability here, only the `apiKey`
     #   apiKey - allows generating API keys
     #
     {
@@ -27,6 +35,12 @@ resource "helm_release" "argocd" {
     {
       name  = "configs.cm.accounts\\.devops-lab\\.enabled"
       value = "true"
+    },
+    # Assign the `admin` role as default.
+    # MUST NOT BE DONE ON PRODUCION ENVIRONMENTS!
+    {
+      name  = "configs.rbac.policy\\.default"
+      value = "role:admin"
     }
   ]
 }
