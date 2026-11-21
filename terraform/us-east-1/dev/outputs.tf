@@ -4,7 +4,7 @@ output "available_azs" {
 }
 
 output "vpc_id" {
-  value       = module.vpc.vpc_id
+  value = module.vpc.vpc_id
 }
 
 output "eks_cluster_endpoint" {
