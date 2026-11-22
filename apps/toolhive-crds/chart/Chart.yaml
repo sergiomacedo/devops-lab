@@ -1,0 +1,8 @@
+apiVersion: v2
+name: toolhive-crds
+description: A Helm chart for Kubernetes
+version: 0.1.0
+dependencies:
+  - name: toolhive-operator-crds
+    version: ">= 0.63.0"
+    repository: "oci://ghcr.io/stacklok/toolhive"
