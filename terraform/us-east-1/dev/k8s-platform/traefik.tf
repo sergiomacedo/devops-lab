@@ -13,23 +13,23 @@ resource "helm_release" "traefik" {
 
   set = [
     # Do not enable this in production unless accepting unverified certificates is intentional.
-    { name   = "additionalArguments[0]"
-      value  = "--serversTransport.insecureSkipVerify=true"
+    { name  = "additionalArguments[0]"
+      value = "--serversTransport.insecureSkipVerify=true"
     },
     {
       name  = "ingressClass.name"
       value = "traefik"
     },
     {
-      name = "providers.kubernetesCRD.ingressClass"
+      name  = "providers.kubernetesCRD.ingressClass"
       value = "traefik"
     },
     {
-      name = "providers.kubernetesIngress.ingressClass"
+      name  = "providers.kubernetesIngress.ingressClass"
       value = "traefik"
     },
     {
-      name = "providers.kubernetesIngressNGINX.enabled"
+      name  = "providers.kubernetesIngressNGINX.enabled"
       value = "true"
     },
     {
@@ -38,10 +38,10 @@ resource "helm_release" "traefik" {
     },
     {
       name  = "log.level"
-      value = "INFO"  # Use DEBUG for more verbose logging
+      value = "INFO" # Use DEBUG for more verbose logging
     },
     {
-      name = "accessLog.enabled"
+      name  = "accessLog.enabled"
       value = "true"
     },
 
